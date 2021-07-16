@@ -1,13 +1,13 @@
 from random import randint
 
 #randomize the doors
-def setTheStage(): -> list
+def setTheStage() -> list:
     doors = [False,False,False]
     doors[randint(0,2)] = True
     return doors
 
 #reveal a non-winning door -- this needs to be redone
-def revealDoor(doors: list, userSelection: int, winningSelection: int): -> int
+def revealDoor(doors: list, userSelection: int, winningSelection: int) -> int:
     numberedDoors = [0,1,2]
     if userSelection != winningSelection:
         return 3 - userSelection - winningSelection
@@ -15,7 +15,7 @@ def revealDoor(doors: list, userSelection: int, winningSelection: int): -> int
         numberedDoors.remove(userSelection)
         return numberedDoors[randint(0,1)]
     
-def MontyHall(switch: bool): -> int
+def MontyHall(switch: bool) -> int:
     stage = setTheStage()
     userSelection = randint(0,2)
     winningSelection = stage.index(True)
