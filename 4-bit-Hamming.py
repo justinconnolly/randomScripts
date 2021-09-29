@@ -8,7 +8,7 @@ def getHamming(bits: list):
 if __name__ == '__main__':
     choice = ""
     bin = ["0","1"]
-    while choice.lower() != "m" or choice.lower() != "a":
+    while True:
         choice = input("(M)anual entry, (A)utomatic, or (Q)uit:\n")
         if choice.lower() == "m":
             while True:
@@ -19,6 +19,7 @@ if __name__ == '__main__':
                     break
                 charCheck = [character in bin for character in userIn]
                 if len(userIn) != 4 or not all(charCheck):
+                    print("Invalid input.")
                     continue
                 bitList = [int(x) for x in list(userIn)]
                 getHamming(bitList)
